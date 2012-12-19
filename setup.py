@@ -29,6 +29,7 @@ setup(name='wcc.weeklynews',
           'plone.app.dexterity',
           'plone.namedfile [blobs]',
           'collective.grok',
+          'collective.miscbehaviors',
           # -*- Extra requirements: -*-
       ],
       extras_require={
