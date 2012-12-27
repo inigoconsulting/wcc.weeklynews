@@ -19,6 +19,8 @@
 <metal:main fill-slot="content-core">
   <metal:content-core define-macro="content-core">
 
+ <h2 tal:content="structure view/date_title"></h2>
+
   <tal:block repeat="eachnews view/allnews" >
   <div id="newsblock" tal:define="news eachnews/getObject;
     newslink eachnews/getURL">
@@ -27,22 +29,27 @@
       <a id="titlelink" tal:attributes="href newslink">
       <span id="newstitle" tal:content="news/title"></span>
         </a>
-  <span id="newsdate" tal:content="python: view.convertdate(news.Date())"/>
+  <span id="newsdate" tal:content="python: view.convert_date(news.Date())"/>
   </div>
-         <div>
       <img id="newsimage" tal:define="scales news/@@images;
                  thumbnail python: scales.scale('image', width=150, height=150);"
      tal:condition="thumbnail"
      tal:attributes="src thumbnail/url;
                      width thumbnail/width;
                      height thumbnail/height"
-                     align='right'
+                     align='left'
                      />
                      <span tal:content="news/Description"></span>
                     <a id="newslink" tal:attributes="href newslink">[more]</a>
-                </div>
 </div>
 </tal:block>
+<div>
+    <h2> Upcoming Event </h2>
+    <tal:block>
+
+
+    </tal:block>
+</div>
  
   </metal:content-core>
 </metal:main>

@@ -1,0 +1,28 @@
+#newsimage {
+    padding-right: 10px;
+}
+#newsblock {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width:70%;
+}
+#newstitle {
+    display: block;
+    font-weight: bold;
+    font-size: 16px;
+}
+#newsdate {
+    font-size: 10px;
+}
+.date-title {
+    padding-bottom: 5px;
+}
+a{
+    border-bottom: 0 !important;
+}
+a#newslink {
+    font-size: 10px;
+}
+.documentFirstHeading, .documentDescription {
+    display: none;
+}

@@ -18,7 +18,19 @@ class Index(dexterity.DisplayForm):
 
     @property
     def allnews(self):
-        return self.catalog.searchResults(portal_type='News Item')
+        y = self.catalog.searchResults(portal_type='News Item')
+        return [x for x in y if self.date_range(x.getObject())]
 
-    def convertdate(self, value):
-        return parse(value).strftime("%d, %B %Y")
+    def convert_date(self, value):
+        return parse(value).strftime("%d %B %Y")
+
+    def date_title(self):
+        start = self.context.startDate.strftime("%d %b %y") 
+        end = self.context.endDate.strftime("%d %b %y") 
+        return "<span> %s - %s </span>" % (start, end)
+
+    def date_range(self, data):
+        objectdate = parse(data.Date()).date()
+        start = self.context.startDate.date()
+        end = self.context.endDate.date()
+        return start <= objectdate <= end
