@@ -18,18 +18,20 @@
 
 <metal:main fill-slot="content-core">
   <metal:content-core define-macro="content-core">
-
- <h2 tal:content="structure view/date_title"></h2>
+  <table>
+      <tr>
+          <td class="newscolumn">
+ <div class="main-title" tal:content="structure view/date_title"></div>
 
   <tal:block repeat="eachnews view/allnews" >
-  <div id="newsblock" tal:define="news eachnews/getObject;
+  <div class="newsblock" tal:define="news eachnews/getObject;
     newslink eachnews/getURL">
 
     <div class="date-title">
+  <span id="newsdate" tal:content="python: view.convert_date(news.Date())"/>
       <a id="titlelink" tal:attributes="href newslink">
       <span id="newstitle" tal:content="news/title"></span>
         </a>
-  <span id="newsdate" tal:content="python: view.convert_date(news.Date())"/>
   </div>
       <img id="newsimage" tal:define="scales news/@@images;
                  thumbnail python: scales.scale('image', width=150, height=150);"
@@ -39,16 +41,96 @@
                      height thumbnail/height"
                      align='left'
                      />
-                     <span tal:content="news/Description"></span>
+                     <span class="description" tal:content="news/Description"></span>
                     <a id="newslink" tal:attributes="href newslink">[more]</a>
 </div>
 </tal:block>
-<div>
-    <h2> Upcoming Event </h2>
-    <tal:block>
 
 
+          </td>
+          <td class="prayercolumn">
+            <div class="main-title">This and next week we pray for</div>
+   <tal:block repeat="eachprayer view/allprayer" >
+  <div class="prayerblock" tal:define="prayer eachprayer/getObject;
+    prayerlink eachprayer/getURL">
+
+    <div class="date-title">
+
+  <span id="prayerdate" tal:content="structure python: view.prayerdate(prayer)"/>
+      <a id="prayertitle" tal:attributes="href prayerlink">
+      <span id="prayertitle" tal:content="prayer/title"></span>
+        </a>
+  </div>
+ <img id="prayerimage" tal:define="scales prayer/@@images;
+                 thumbnail python: scales.scale('image', width=150, height=150);"
+     tal:condition="thumbnail"
+     tal:attributes="src thumbnail/url;
+                     width thumbnail/width;
+                     height thumbnail/height"
+                     />
+
+
+                    <a id="prayerlink" tal:attributes="href prayerlink">» View
+                        the prayers</a>
+
+</div>
     </tal:block>
+   
+          </td>
+               </tr>
+      <tr>
+          <td colspan="2">
+   <div class="main-title"> Upcoming Events </div>
+   <tal:block repeat="eachevents view/allevents" >
+  <div id="eventsblock" tal:define="events eachevents/getObject;
+    eventslink eachevents/getURL">
+
+    <div class="date-title">
+      <a id="titlelink" tal:attributes="href eventslink">
+      <span id="eventstitle" tal:content="events/title"></span>
+        </a>
+  <span id="eventsdate" tal:content="python: view.convert_date(events.Date())"/>
+  </div>
+
+                     <span tal:content="events/Description"></span>
+                    <a id="eventslink" tal:attributes="href eventslink">[more]</a>
+
+</div>
+    </tal:block>
+
+          </td>
+      </tr>
+  </table>
+
+    <hr/>
+    <div class="bottom-text">
+<div>
+    <div>Media contact: media@wcc-coe.org</div>
+    <div>+41 79 507 6363</div>
+</div>
+    <hr/>
+    
+<div>
+    <p>
+        The World Council of Churches (WCC) promotes Christian unity in faith, witness
+        and service for a just and peaceful world. An ecumenical fellowship of churches
+        founded in 1948, today the WCC brings together 349 Protestant, Orthodox,
+        Anglican and other churches representing more than 560 million Christians in
+        over 110 countries, and works cooperatively with the Roman Catholic Church. The
+        WCC general secretary is the Rev. Dr Olav Fykse Tveit, from the [Lutheran]
+        Church of Norway.
+    </p>
+    <p>
+       You receive this information as a subscriber to WCC e-news. You are
+       registered as ###USER_name### with the address ###USER_email###. 
+    </p>
+    <p>
+        Click here to unsubscribe or change your distribution settings.
+    </p>
+</div>
+
+    <hr/>
+
 </div>
  
   </metal:content-core>

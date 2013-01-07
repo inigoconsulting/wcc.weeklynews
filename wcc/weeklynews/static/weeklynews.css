@@ -1,28 +1,78 @@
 #newsimage {
     padding-right: 10px;
 }
-#newsblock {
+.newsblock {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+.prayerblock {
     padding-top: 20px;
     padding-bottom: 20px;
-    width:70%;
 }
-#newstitle {
-    display: block;
+td.prayercolumn {
+    width:20%;
+    vertical-align: top;
+    padding-left: 20px;
+}
+td.newscolumn {
+    width:80%;
+    vertical-align: top;
+}
+#newstitle, #eventstitle {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
+}
+#prayertitle, #prayerdate {
+    font-size: 12px;
 }
 #newsdate {
     font-size: 10px;
+    float: right;
 }
 .date-title {
     padding-bottom: 5px;
+    font-weight: bold;
 }
 a{
     border-bottom: 0 !important;
 }
-a#newslink {
+a#newslink, a#eventslink, a#prayerlink {
     font-size: 10px;
 }
 .documentFirstHeading, .documentDescription {
     display: none;
+}
+div.events-section{
+
+    margin-top:20px;
+}
+
+span#eventsdate {
+
+    font-size:10px;
+    display: block;
+}
+div.bottom-text {
+    font-size: 10px;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+.main-title {
+
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+div#eventsblock {
+
+    margin-bottom: 20px;
+}
+hr {
+
+    margin-top:10px;
+    margin-bottom:10px;
+
+}
+#prayerimage {
+    display: block;
 }
