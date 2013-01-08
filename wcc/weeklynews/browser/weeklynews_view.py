@@ -3,6 +3,7 @@ from plone.directives import dexterity, form
 from wcc.weeklynews.content.weeklynews import IWeeklyNews
 from Products.CMFCore.utils import getToolByName
 from dateutil.parser import parse
+from datetime import timedelta
 
 grok.templatedir('templates')
 
@@ -18,27 +19,48 @@ class Index(dexterity.DisplayForm):
 
     @property
     def allnews(self):
-        y = self.catalog.searchResults(portal_type='News Item')
-        return [x for x in y if self.date_range(x.getObject())]
+        start = self.context.startDate.date()
+        end = self.context.endDate.date()
+        date_range_query = {'query': (start, end), 'range': 'min:max'}
+        return self.catalog.searchResults({
+                'portal_type': 'News Item',
+                'Date': date_range_query,
+                'sort_on': 'Date'
+                })
 
     @property
     def allevents(self):
-        y = self.catalog.searchResults(portal_type='Event')
-        end = self.context.endDate.date()
-        return [x for x in y if self.get_date(x.getObject()) > end]
+        extra = timedelta(days=1)
+        end = self.context.endDate.date() + extra
+        date_range_query = {'query': end, 'range': 'min'}
+        return  self.catalog.searchResults({
+                'portal_type': 'Event',
+                'start': date_range_query,
+                'sort_on': 'start'
+                })
+
 
     @property
     def allprayer(self):
-        y = self.catalog.searchResults(
-                portal_type='wcc.prayercycle.prayercycle')
-        end = self.context.endDate.date()
-        return [x for x in y if self.get_date(x.getObject())]
+        extra = timedelta(weeks=1)
+        start = self.context.startDate.date()
+        end = self.context.endDate.date() + extra
+        date_range_query = {'query': (start, end), 'range': 'min: max'}
+        return  self.catalog.searchResults({
+                'portal_type': 'wcc.prayercycle.prayercycle',
+                'start': date_range_query,
+                'sort_on': 'start'
+                })
+
+    @property
+    def newvideo(self):
+        return self.catalog.searchResults({
+                'portal_type': 'RTInternalVideo',
+                'sort_on': 'created'
+                })[-1]
 
     def convert_date(self, value):
         return parse(value).strftime("%d %B %Y")
-
-    def get_date(self, data):
-        return parse(data.Date()).date()
 
     def date_title(self):
         start = self.context.startDate.strftime("%d %b %y")
@@ -49,10 +71,3 @@ class Index(dexterity.DisplayForm):
         start = prayerobject.startDate.strftime("%d %b")
         end = prayerobject.endDate.strftime("%d %b %y")
         return "<span> %s - %s </span>" % (start, end)
-
-
-    def date_range(self, data):
-        objectdate = self.get_date(data)
-        start = self.context.startDate.date()
-        end = self.context.endDate.date()
-        return start <= objectdate <= end

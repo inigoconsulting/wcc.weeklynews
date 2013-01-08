@@ -8,6 +8,7 @@
 .prayerblock {
     padding-top: 20px;
     padding-bottom: 20px;
+    border-bottom: 1px dotted;
 }
 td.prayercolumn {
     width:20%;
@@ -18,11 +19,14 @@ td.newscolumn {
     width:80%;
     vertical-align: top;
 }
-#newstitle, #eventstitle {
+#newstitle, #eventstitle, .mediatitle {
     font-weight: bold;
     font-size: 14px;
 }
-#prayertitle, #prayerdate {
+div.mediatitle {
+    color: #B01;
+}
+#prayertitle, #prayerdate, #videotitle, .socialmediatext {
     font-size: 12px;
 }
 #newsdate {
@@ -75,4 +79,9 @@ hr {
 }
 #prayerimage {
     display: block;
+}
+div.socialmedia {
+    margin-top:30px;
+    border: 1px solid;
+    padding: 10px;
 }

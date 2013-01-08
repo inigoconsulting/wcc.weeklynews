@@ -73,9 +73,42 @@
                     <a id="prayerlink" tal:attributes="href prayerlink">» View
                         the prayers</a>
 
+
 </div>
+
+
     </tal:block>
    
+            <div class="main-title videotitle">New Video</div>
+  <div class="videoblock" tal:define="video view/newvideo/getObject;
+    videolink view/newvideo/getURL">
+
+    <img id="videoimage" tal:define="scales video/@@images;
+                 thumbnail python: scales.scale('image', width=150, height=150);"
+     tal:condition="thumbnail"
+     tal:attributes="src thumbnail/url;
+                     width thumbnail/width;
+                     height thumbnail/height"
+                     />
+ <div class="date-title">
+
+      <a id="videotitle" tal:attributes="href videolink">
+      <span id="videotitle" tal:content="video/title"></span>
+        </a>
+  </div>
+
+</div>
+
+<div class="socialmedia">
+            <div class="mediatitle">The WCC in social media:</div>
+            <p class="socialmediatext">
+                Sharing prayers and news on <a
+                    href="https://www.facebook.com/WorldCouncilofChurches">Facebook
+                </a> and <a href="http://twitter.com/Oikoumene">Twitter</a>
+            </p>
+</div>
+
+
           </td>
                </tr>
       <tr>
@@ -89,7 +122,8 @@
       <a id="titlelink" tal:attributes="href eventslink">
       <span id="eventstitle" tal:content="events/title"></span>
         </a>
-  <span id="eventsdate" tal:content="python: view.convert_date(events.Date())"/>
+        <span id="eventsdate" 
+            tal:content="python:view.convert_date(events.startDate.Date())"/>
   </div>
 
                      <span tal:content="events/Description"></span>
