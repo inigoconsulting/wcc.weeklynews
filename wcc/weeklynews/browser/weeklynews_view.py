@@ -57,26 +57,6 @@ class Index(dexterity.DisplayForm):
                     return [result[idx], result[idx + 1]]
                 start += increment
 
-#        upper = {'query': end + extra2, 'range': 'min'}
-#        lower = {'query': start - extra2, 'range': 'max'}
-#        first = self.catalog.searchResults({
-#                'portal_type': 'wcc.prayercycle.prayercycle',
-#                'start': date_range_query,
-#                })
-#        second = self.catalog.searchResults({
-#                'portal_type': 'wcc.prayercycle.prayercycle',
-#                'end': date_range_query,
-#                })
-#
-#        third = self.catalog.searchResults({
-#                'portal_type': 'wcc.prayercycle.prayercycle',
-#                'end': upper,
-#                'start': lower,
-#                })
-#
-#
-#        result = list(set(first + second))
-
     @property
     def newvideo(self):
         return self.catalog.searchResults({
