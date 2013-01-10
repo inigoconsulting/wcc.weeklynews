@@ -49,7 +49,7 @@
 
                     </td>
                     <td class="prayercolumn">
-                        <div class="main-title">This and next week we pray for</div>
+                        <div class="main-title" tal:condition="view/allprayer">This and next week we pray for</div>
                         <tal:block repeat="eachprayer view/allprayer" >
                             <div class="prayerblock" tal:define="prayer eachprayer/getObject;
                                 prayerlink eachprayer/getURL">

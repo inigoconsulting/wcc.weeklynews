@@ -73,6 +73,6 @@ class Index(dexterity.DisplayForm):
         return "%s - %s" % (start, end)
 
     def prayerdate(self, prayerobject):
-        start = prayerobject.startDate.strftime("%d %b")
+        start = prayerobject.startDate.strftime("%d %b %y")
         end = prayerobject.endDate.strftime("%d %b %y")
         return "%s - %s" % (start, end)
