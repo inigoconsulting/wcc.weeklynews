@@ -58,11 +58,12 @@
 
                                     <span id="prayerdate" tal:content="python: view.prayerdate(prayer)"/>
                                     <a id="prayertitle" tal:attributes="href prayerlink">
-                                        <span id="prayertitle" tal:content="prayer/title"></span>
+                                        <div id="prayertitle"
+                                            tal:content="prayer/title"></div>
                                     </a>
                                 </div>
                                 <img id="prayerimage" tal:define="scales prayer/@@images;
-                                    thumbnail python: scales.scale('image', width=150, height=150);"
+                                    thumbnail python: scales.scale('image', width=200, height=200);"
                                     tal:condition="thumbnail"
                                     tal:attributes="src thumbnail/url;
                                     width thumbnail/width;
@@ -84,7 +85,7 @@
                             videolink view/newvideo/getURL">
 
                             <img id="videoimage" tal:define="scales video/@@images;
-                                thumbnail python: scales.scale('image', width=150, height=150);"
+                                thumbnail python: scales.scale('image', width=200, height=200);"
                                 tal:condition="thumbnail"
                                 tal:attributes="src thumbnail/url;
                                 width thumbnail/width;
