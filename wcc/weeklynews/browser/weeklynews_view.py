@@ -59,10 +59,18 @@ class Index(dexterity.DisplayForm):
 
     @property
     def newvideo(self):
-        return self.catalog.searchResults({
+        start = self.context.startDate.date()
+        end = self.context.endDate.date()
+        date_range_query = {'query': (start, end), 'range': 'min:max'}
+        results = self.catalog.searchResults({
                 'portal_type': 'RTInternalVideo',
+                'Date': date_range_query,
                 'sort_on': 'created'
-                })[-1]
+                })
+        if results:
+            return results[-1]
+        return None
+
 
     def convert_date(self, value):
         return parse(value).strftime("%d %B %Y")

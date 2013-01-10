@@ -49,7 +49,7 @@
 
                     </td>
                     <td class="prayercolumn">
-                        <div class="main-title" tal:condition="view/allprayer">This and next week we pray for</div>
+                    <div class="main-title" tal:condition="view/allprayer">This and next week we pray for</div>
                         <tal:block repeat="eachprayer view/allprayer" >
                             <div class="prayerblock" tal:define="prayer eachprayer/getObject;
                                 prayerlink eachprayer/getURL">
@@ -80,6 +80,7 @@
 
                         </tal:block>
 
+                        <div tal:condition="view/newvideo">
                         <div class="main-title videotitle">New Video</div>
                         <div class="videoblock" tal:define="video view/newvideo/getObject;
                             videolink view/newvideo/getURL">
@@ -99,6 +100,7 @@
                             </div>
 
                         </div>
+                    </div>
 
                         <div class="socialmedia">
                             <div class="mediatitle">The WCC in social media:</div>
