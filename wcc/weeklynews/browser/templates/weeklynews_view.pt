@@ -21,7 +21,7 @@
             <table>
                 <tr>
                     <td class="newscolumn">
-                        <div class="main-title" tal:content="structure view/date_title"></div>
+                        <div class="main-title" tal:content="view/date_title"></div>
 
                         <tal:block repeat="eachnews view/allnews" >
                             <div class="newsblock" tal:define="news eachnews/getObject;
@@ -56,7 +56,7 @@
 
                                 <div class="date-title">
 
-                                    <span id="prayerdate" tal:content="structure python: view.prayerdate(prayer)"/>
+                                    <span id="prayerdate" tal:content="python: view.prayerdate(prayer)"/>
                                     <a id="prayertitle" tal:attributes="href prayerlink">
                                         <span id="prayertitle" tal:content="prayer/title"></span>
                                     </a>

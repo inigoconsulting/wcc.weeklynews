@@ -42,15 +42,40 @@ class Index(dexterity.DisplayForm):
 
     @property
     def allprayer(self):
-        extra = timedelta(weeks=1)
-        start = self.context.startDate.date()
-        end = self.context.endDate.date() + extra
-        date_range_query = {'query': (start, end), 'range': 'min: max'}
-        return  self.catalog.searchResults({
+        end = self.context.endDate.date()
+        increment = timedelta(days=1)
+
+        result = self.catalog.searchResults({
                 'portal_type': 'wcc.prayercycle.prayercycle',
-                'start': date_range_query,
                 'sort_on': 'start'
                 })
+
+        for idx, brain in enumerate(result):
+            start = self.context.startDate.date()
+            while start <= end:
+                if brain.start.date() <= start <= brain.end.date():
+                    return [result[idx], result[idx + 1]]
+                start += increment
+
+#        upper = {'query': end + extra2, 'range': 'min'}
+#        lower = {'query': start - extra2, 'range': 'max'}
+#        first = self.catalog.searchResults({
+#                'portal_type': 'wcc.prayercycle.prayercycle',
+#                'start': date_range_query,
+#                })
+#        second = self.catalog.searchResults({
+#                'portal_type': 'wcc.prayercycle.prayercycle',
+#                'end': date_range_query,
+#                })
+#
+#        third = self.catalog.searchResults({
+#                'portal_type': 'wcc.prayercycle.prayercycle',
+#                'end': upper,
+#                'start': lower,
+#                })
+#
+#
+#        result = list(set(first + second))
 
     @property
     def newvideo(self):
@@ -65,9 +90,9 @@ class Index(dexterity.DisplayForm):
     def date_title(self):
         start = self.context.startDate.strftime("%d %b %y")
         end = self.context.endDate.strftime("%d %b %y")
-        return "<span> %s - %s </span>" % (start, end)
+        return "%s - %s" % (start, end)
 
     def prayerdate(self, prayerobject):
         start = prayerobject.startDate.strftime("%d %b")
         end = prayerobject.endDate.strftime("%d %b %y")
-        return "<span> %s - %s </span>" % (start, end)
+        return "%s - %s" % (start, end)
