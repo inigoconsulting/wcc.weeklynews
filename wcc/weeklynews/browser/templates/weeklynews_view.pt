@@ -142,7 +142,8 @@
             <hr/>
             <div class="bottom-text">
                 <div>
-                    <div>Media contact: media@wcc-coe.org</div>
+                    <div>Media contact: <a
+                            href="mailto:media@wcc-coe.org">media@wcc-coe.org</a></div>
                     <div>+41 79 507 6363</div>
                 </div>
                 <hr/>

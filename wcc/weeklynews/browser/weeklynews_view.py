@@ -84,3 +84,10 @@ class Index(dexterity.DisplayForm):
         start = prayerobject.startDate.strftime("%d %b %y")
         end = prayerobject.endDate.strftime("%d %b %y")
         return "%s - %s" % (start, end)
+
+
+class Fake(Index):
+    grok.context(IWeeklyNews)
+    grok.require('zope2.View')
+    grok.template('fakeweeklynews')
+    grok.name('fake')
