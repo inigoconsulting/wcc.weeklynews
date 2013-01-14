@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0042)http://www.oikoumene.org/index.php?id=1943 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>WCC WEEKLY: </title>
+</head>
+<body style="font:100% Verdana, Arial, Helvetica, sans-serif; line-height:1em;"><div style="font:83%/1.2857em Verdana, Arial, Helvetica, sans-serif;
+	background: #666666;
+	margin: 0; 
+	padding: 0;
+	text-align: center; 
+	color:#221b1b;">
+  <div style="width: 647px;
+	background: #FFFFFF;
+	margin: 0 auto;
+	border: 1px solid #000000;
+	text-align: left;">
+    <div style="background-color: black;" >  
+    
+    
+    
+    
+    
+    </div>
+    <div style="font-size:32px;line-height:32px;font-weight:bold;color:#AAAAAA;padding:0 20px 10px 20px;float:right;"></div>
+    <div style="font-size: 32px;
+	line-height:32px;
+	font-weight:bold;
+	color:#AAAAAA;
+	padding:0 20px 10px 20px;" tal:content="view/date_title"></div>
+    <div style="padding: 25px 20px 0 20px;
+	border-top: #999966 solid 3px;">
+<!--TYPO3SEARCH_begin--><a name="c13802" style="color:#b01;text-decoration:none;"></a><div><table border="0" style="border-collapse:collapse;padding:0;margin:0;"><tbody><tr valign="top">
+<td style="background-color:#ffffff;padding:5px;border-style:solid;border-width:1px;border-color:#fff;text-align:left;">
+<a name="c7920" style="color:#b01;text-decoration:none;"></a><div>
+
+<tal:block repeat="eachnews view/allnews" >
+<div style="border:0px; background-color:#FFFFFF; padding:0;" tal:define="news eachnews/getObject; newslink eachnews/getURL">
+<div style="padding:3px 0 0 0;margin:0 0 0 0;border:0;background-color:#fff;clear:both;">				
+			<span style="float: right;color: #55211C;font-size: 9px;font-weight: normal;padding-left: 7px;padding-right:3px;" tal:content="python: view.convert_date(news.Date())"></span>
+    <h3 style="color:#221b1b;font-size:14px;margin:0px 0 8px 0;"><a tal:attributes="href newslink" target="_self" title="Complexities of current Jewish-Christian dialogue highlighted" style="color:#b01;text-decoration:none;" tal:content="news/title"></a></h3> 		  
+  </div>
+              <div style="padding:5px;margin-bottom: 15px;border-bottom: 0px solid #777;">
+              	
+<table width="100%" border="0"><tbody><tr style="vertical-align:top;">
+            <td style="text-align: left;"><a href="http://www.oikoumene.org/index.php?id=1724&tx_ttnews%5Btt_news%5D=16716&tx_ttnews%5BbackPid%5D=1634&cHash=4cf54a9c0d9c18f36c8fa7a317ece750" target="_self" title="Complexities of current Jewish-Christian dialogue highlighted" style="color:#b01;text-decoration:none;"><img
+                    tal:define="scales news/@@images;
+                                    thumbnail python: scales.scale('image', width=120, height=45);"
+                                    tal:condition="thumbnail"
+                                    tal:attributes="src thumbnail/url;
+                                    width thumbnail/width;
+                                    height thumbnail/height"
+                    
+                    border="0" alt="" title="" style="border:0px;"></a></td>
+    <td style="padding-left:10px;text-align:left;">
+<p style="font-size:14px;margin-left:4px;margin:0;"><span tal:content="news/Description"></span></p>
+    
+<span style="text-align:right;width:100%;font-size: 11px;padding-right:5px;"><a tal:attributes="href newslink; title news/title" target="_self" style="color:#b01;text-decoration:none;">[more]</a></span>
+</td>
+  </tr></tbody></table>
+</div>
+
+		
+	<div style="text-align: center;clear:left;"></div>
+</div>
+</tal:block>
+</div>
+<a name="c22389" style="color:#b01;text-decoration:none;"></a><div></div>
+</td>
+    <td style="background-color:#ffffff;padding:5px;border-style:solid;border-width:1px;border-color:#fff;padding-left:10px;text-align:left;">
+<a name="c13803" style="color:#b01;text-decoration:none;"></a><div><div>
+        <h2 style="color:#221b1b;font-size:16px;margin:0 0 10px 0;" tal:condition="view/allprayer">This and next week we pray for</h2>
+
+        <tal:block repeat="eachprayer view/allprayer" >
+        <div tal:define="prayer eachprayer/getObject; prayerlink eachprayer/getURL">
+          <div style="text-align:left;padding:10px 0;border-bottom: 1px dotted #ADBBAA;">
+<h3 style="color:#221b1b;font-size:11px;margin:0px 0 8px 0;" tal:content="python: view.prayerdate(prayer)"></h3>
+<h2 style="color:#221b1b;font-size:12px;margin:0 0 10px 0;"><a tal:attributes="href prayerlink" target="_self" style="color:#b01;text-decoration:none;" tal:content="prayer/title"></a></h2>
+<a tal:attributes="href prayerlink" target="_self" style="color:#b01;text-decoration:none;"><img 
+                                    tal:define="scales prayer/@@images;
+                                    thumbnail python: scales.scale('image', width=132, height=100);"
+                                    tal:condition="thumbnail"
+                                    tal:attributes="src thumbnail/url;
+                                    width thumbnail/width;
+                                    height thumbnail/height"
+
+    
+    
+    
+    
+    border="0" alt="" title="" style="border:0px;"></a><br><div style="font-size:11px;text-align:right;"><a tal:attributes="href prayerlink" target="_self" style="color:#b01;text-decoration:none;">» View the prayers</a></div>
+</div>
+        </div>
+        </tal:block>
+        <div style="text-align:right; margin-bottom:5px; font-size:11px;"></div>
+      </div></div>
+<div tal:condition="view/newvideo">
+<a name="c35283" style="color:#b01;text-decoration:none;"></a><div>
+<div><font face="verdana" size="3"><b><a href="http://www.youtube.com/user/WCCworld/videos" target="_blank" style="color:#b01;text-decoration:none;">New video</a></b></font></div>
+<div style="text-align: center;"   tal:define="video view/newvideo/getObject; videolink view/newvideo/getURL" >
+    <div style="width:140px;padding:0;margin:0 auto;"><dl style="width:140px;float:left;margin:0;display:inline;margin-left:0px !important;margin-bottom:5px;margin-right:0px !important;text-align:left;margin-top:0 !important;"><dt style="float:none;margin:0;display:inline;"><a tal:attributes="href videolink" target="_self" style="color:#b01;text-decoration:none;"><img 
+                tal:define="scales video/@@images;
+                                thumbnail python: scales.scale('image', width=145, height=98);"
+                                tal:condition="thumbnail"
+                                tal:attributes="src thumbnail/url;
+                                width thumbnail/width;
+                                height thumbnail/height"
+
+                
+                
+                 border="0" alt="" title="" style="border:0px;margin:0;"></a></dt></dl></div>
+<div style="clear:both;text-align:left;"><div><p style="font-size:14px;font:normal 12px Arial, Helvetica, Verdana, sans-serif;padding-bottom:12px;margin-left:4px;margin:0;"><a tal:attributes="href videolink" target="_self" style="color:#b01;text-decoration:none;"><b tal:content="video/title"></b></a></p></div></div>
+</div>
+</div>
+<div style="clear: both;"><!-- --></div>
+</div>
+<a name="c39410" style="color:#b01;text-decoration:none;"></a><div><div>
+<h4 style="color:#221b1b;font-size:12px;margin:6px 0 6px 0;">&nbsp;</h4>
+<table style="background-color:#fff;border:1px solid #999999;padding:2px 4px 2px 4px;"><tbody><tr><td style="text-align: left;">
+<p style="font-size:14px;font:normal 12px Arial, Helvetica, Verdana, sans-serif;padding-bottom:12px;margin-left:4px;margin:0;"></p>
+<h3 style="color:#221b1b;font-size:14px;margin:0px 0 8px 0;"> <a href="http://www.oikoumene.org/index.php?id=7106" target="_self" style="color:#b01;text-decoration:none;">The WCC in social media:</a>
+</h3>
+<p style="font-size:1em;font:normal 12px Arial, Helvetica, Verdana, sans-serif;padding-bottom:12px;margin:0;">Sharing prayers and news on <a href="https://www.facebook.com/WorldCouncilofChurches" title="Opens external link in new window" target="_blank" style="color:#b01;text-decoration:none;">Facebook</a> and <a href="http://twitter.com/Oikoumene" title="Opens external link in new window" target="_blank" style="color:#b01;text-decoration:none;">Twitter</a></p>
+</td></tr></tbody></table>
+</div></div>
+</td>
+  </tr></tbody></table></div>
+<a name="c11178" style="color:#b01;text-decoration:none;"></a><div>
+<div><font face="verdana" size="3"><b>Upcoming events</b></font></div>
+<tal:block repeat="eachevents view/allevents" >
+<div style="padding-bottom:3px;margin-top:0px; " tal:define="events eachevents/getObject; eventslink eachevents/getURL">
+
+
+<div style="margin-top:3px;padding-top:6px;padding-left:3px;padding-right:3px;padding-bottom: 20px;border-bottom:1px solid #666;">
+		<div>
+				<h3 style="padding:3px 0;margin:0px 0 8px 0;font-size:14px;color:#221b1b;">
+                    <a tal:attributes="href eventslink; title events/title" tal:content="events/title" target="_self" style="color:#b01;text-decoration:none;">
+				</a>
+				</h3>
+		</div>
+		<table width="100%" border="0"><tbody><tr style="vertical-align:top;">
+<td style="text-align: left;"><</td>
+				<td style="padding-left:10px;text-align:left;">
+                    <div style="font-size:9px;"><strong> <span style="font-weight:bold" 
+                                        tal:content="python:view.convert_date(events.startDate.Date())"/><br>
+                            <span tal:content="events/location "  /> </strong></div>
+								<div> <p style="font-size:14px;margin-left:4px;margin:0;"><span tal:content="events/Description"></span></p>
+						<div style="height:18px;text-align:right;display:block;font-size:12px;">
+										<a tal:attributes="href eventslink; title events/title" target="_self" style="color:#b01;text-decoration:none;">
+										[more]
+										</a>
+									</div>
+					</div>
+</td>
+			</tr></tbody></table>
+</div>
+				
+
+</div>
+
+                        </tal:block>
+</div>
+<a name="c8870" style="color:#b01;text-decoration:none;"></a><div><div>
+<p style="font-size:14px;font:normal 12px Arial, Helvetica, Verdana, sans-serif;padding-bottom:12px;margin-left:4px;margin:0;"><span style="font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-size: 10px;">Media contact:&nbsp;<a href="mailto:media@wcc-coe.org" style="color:#b01;text-decoration:none;">media@wcc-coe.org</a></span><br><span style="font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-size: 10px;">+41 79 507 6363</span>
+</p>
+<p style="font-size:14px;font:normal 12px Arial, Helvetica, Verdana, sans-serif;padding-bottom:12px;margin-left:4px;margin:0;"></p>
+<hr>
+<p align="left" style="font-size:1em;font:normal 12px Arial, Helvetica, Verdana, sans-serif;padding-bottom:12px;margin:0;"><span style="font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-size: 10px;">The World Council of Churches (WCC)&nbsp;promotes Christian unity in faith, witness and service for a just and peaceful world. An ecumenical fellowship of churches founded in 1948, today the WCC brings together 349 Protestant, Orthodox, Anglican and other churches representing more than 560 million Christians in over 110 countries, and works cooperatively with the Roman Catholic Church. The WCC general secretary is the Rev. Dr Olav Fykse Tveit, from the [Lutheran] Church of Norway.</span></p>
+</div></div>
+<a name="c8871" style="color:#b01;text-decoration:none;"></a><div><div>
+<p style="font-size:14px;font:normal 12px Arial, Helvetica, Verdana, sans-serif;padding-bottom:12px;margin-left:4px;margin:0;"><span style="font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-size: 10px;">You receive this information as a subscriber to WCC e-news. You are registered as ###USER_name### with the address ###USER_email###.</span>
+</p>
+<p style="font-size:14px;font:normal 12px Arial, Helvetica, Verdana, sans-serif;padding-bottom:12px;margin-left:4px;margin:0;"><span style="font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-size: 10px;">Click <a href="http://www.oikoumene.org/index.php?id=7537" target="_self" style="color:#b01;text-decoration:none;">here to unsubscribe or change your distribution settings</a>.</span></p>
+</div></div>
+<a name="c8881" style="color:#b01;text-decoration:none;"></a><div><img src="./WCC WEEKLY _files/dmailerping.gif" width="1" height="1" dmailerping="1" style="border:0px;"></div>
+<!--TYPO3SEARCH_end-->
+</div>
+    <div style="padding:12px 20px;
+	border-top: #999966 solid 3px;
+	font-size: 0.8em;"></div>
+    <!-- end #container -->
+  </div>
+</div>
+
+</body></html>

@@ -51,7 +51,7 @@ div.events-section{
     margin-top:20px;
 }
 
-span#eventsdate {
+span#eventsdate, #eventslocation {
 
     font-size:10px;
     display: block;

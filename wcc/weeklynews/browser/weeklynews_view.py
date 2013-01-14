@@ -71,7 +71,6 @@ class Index(dexterity.DisplayForm):
             return results[-1]
         return None
 
-
     def convert_date(self, value):
         return parse(value).strftime("%d %B %Y")
 
@@ -86,8 +85,8 @@ class Index(dexterity.DisplayForm):
         return "%s - %s" % (start, end)
 
 
-class Fake(Index):
+class Old(Index):
     grok.context(IWeeklyNews)
     grok.require('zope2.View')
-    grok.template('fakeweeklynews')
-    grok.name('fake')
+    grok.template('oldweeklynews_view')
+    grok.name('old')

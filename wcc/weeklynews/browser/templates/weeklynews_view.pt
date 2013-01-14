@@ -127,6 +127,8 @@
                                     </a>
                                     <span id="eventsdate" 
                                         tal:content="python:view.convert_date(events.startDate.Date())"/>
+                                    <span id="eventslocation"
+                                        tal:content="events/location" />
                                 </div>
 
                                 <span tal:content="events/Description"></span>
