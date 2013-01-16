@@ -42,14 +42,16 @@
                                     align='left'
                                     />
                                 <span class="description" tal:content="news/Description"></span>
-                                <a id="newslink" tal:attributes="href newslink">[more]</a>
+                                <a id="newslink" tal:attributes="href newslink"
+                                    i18n:translate="">[more]</a>
                             </div>
                         </tal:block>
 
 
                     </td>
                     <td class="prayercolumn">
-                    <div class="main-title" tal:condition="view/allprayer">This and next week we pray for</div>
+                    <div class="main-title" tal:condition="view/allprayer"
+                        i18n:translate="">This and next week we pray for</div>
                         <tal:block repeat="eachprayer view/allprayer" >
                             <div class="prayerblock" tal:define="prayer eachprayer/getObject;
                                 prayerlink eachprayer/getURL">
@@ -71,7 +73,8 @@
                                     />
 
 
-                                <a id="prayerlink" tal:attributes="href prayerlink">» View
+                                <a id="prayerlink" tal:attributes="href
+                                    prayerlink" i18n:translate="">View
                                     the prayers</a>
 
 
@@ -81,7 +84,7 @@
                         </tal:block>
 
                         <div tal:condition="view/newvideo">
-                        <div class="main-title videotitle">New Video</div>
+                        <div class="main-title videotitle" i18n:translate="">New Video</div>
                         <div class="videoblock" tal:define="video view/newvideo/getObject;
                             videolink view/newvideo/getURL">
 
@@ -103,11 +106,13 @@
                     </div>
 
                         <div class="socialmedia">
-                            <div class="mediatitle">The WCC in social media:</div>
-                            <p class="socialmediatext">
+                            <div class="mediatitle" i18n:translate="">The WCC in social media:</div>
+                            <p class="socialmediatext" i18n:translate="">
                                 Sharing prayers and news on <a
-                                    href="https://www.facebook.com/WorldCouncilofChurches">Facebook
-                                </a> and <a href="http://twitter.com/Oikoumene">Twitter</a>
+                                    href="https://www.facebook.com/WorldCouncilofChurches"
+                                    i18n:name="facebook">Facebook
+                                </a> and <a href="http://twitter.com/Oikoumene"
+                                i18n:name="twitter">Twitter</a>
                             </p>
                         </div>
 
@@ -116,7 +121,7 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <div class="main-title"> Upcoming Events </div>
+                        <div class="main-title" i18n:translate=""> Upcoming Events </div>
                         <tal:block repeat="eachevents view/allevents" >
                             <div id="eventsblock" tal:define="events eachevents/getObject;
                                 eventslink eachevents/getURL">
@@ -132,7 +137,8 @@
                                 </div>
 
                                 <span tal:content="events/Description"></span>
-                                <a id="eventslink" tal:attributes="href eventslink">[more]</a>
+                                <a id="eventslink" tal:attributes="href
+                                    eventslink" i18n:translate="">[more]</a>
 
                             </div>
                         </tal:block>
@@ -144,14 +150,14 @@
             <hr/>
             <div class="bottom-text">
                 <div>
-                    <div>Media contact: <a
+                    <div i18n:translate="">Media contact: <a i18n:name="email"
                             href="mailto:media@wcc-coe.org">media@wcc-coe.org</a></div>
                     <div>+41 79 507 6363</div>
                 </div>
                 <hr/>
 
-                <div>
-                    <p>
+                <div >
+                    <p i18n:translate="endnote1">
                         The World Council of Churches (WCC) promotes Christian unity in faith, witness
                         and service for a just and peaceful world. An ecumenical fellowship of churches
                         founded in 1948, today the WCC brings together 349 Protestant, Orthodox,
@@ -160,11 +166,11 @@
                         WCC general secretary is the Rev. Dr Olav Fykse Tveit, from the [Lutheran]
                         Church of Norway.
                     </p>
-                    <p>
+                    <p i18n:translate="endnote2">
                         You receive this information as a subscriber to WCC e-news. You are
                         registered as ###USER_name### with the address ###USER_email###. 
                     </p>
-                    <p>
+                    <p i18n:translate="endnote3">
                         Click here to unsubscribe or change your distribution settings.
                     </p>
                 </div>

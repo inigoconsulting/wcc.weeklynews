@@ -1,0 +1,83 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2013-01-16 14:36+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: wcc.weeklynews\n"
+
+#: ./__init__.py:24
+#: ./setuphandlers.py:7
+msgid ""
+msgstr ""
+
+#: ./profiles/default/types/wcc.weeklynews.weeklynews.xml
+msgid "Generate weekly new summary"
+msgstr ""
+
+#: ./browser/templates/weeklynews_view.pt:153
+msgid "Media contact: ${email}"
+msgstr ""
+
+#: ./browser/templates/weeklynews_view.pt:87
+msgid "New Video"
+msgstr ""
+
+#: ./browser/templates/weeklynews_view.pt:114
+msgid "Sharing prayers and news on ${facebook} and ${twitter}"
+msgstr ""
+
+#: ./browser/templates/weeklynews_view.pt:109
+msgid "The WCC in social media:"
+msgstr ""
+
+#: ./browser/templates/weeklynews_view.pt:53
+msgid "This and next week we pray for"
+msgstr ""
+
+#: ./browser/templates/weeklynews_view.pt:124
+msgid "Upcoming Events"
+msgstr ""
+
+#: ./browser/templates/weeklynews_view.pt:76
+msgid "View the prayers"
+msgstr ""
+
+#: ./profiles/default/types/wcc.weeklynews.weeklynews.xml
+msgid "Weekly News"
+msgstr ""
+
+#: ./browser/templates/weeklynews_view.pt:45
+msgid "[more]"
+msgstr ""
+
+#. Default: "The World Council of Churches (WCC) promotes Christian unity in faith, witness and service for a just and peaceful world. An ecumenical fellowship of churches founded in 1948, today the WCC brings together 349 Protestant, Orthodox, Anglican and other churches representing more than 560 million Christians in over 110 countries, and works cooperatively with the Roman Catholic Church. The WCC general secretary is the Rev. Dr Olav Fykse Tveit, from the [Lutheran] Church of Norway."
+#: ./browser/templates/weeklynews_view.pt:160
+msgid "endnote1"
+msgstr ""
+
+#. Default: "You receive this information as a subscriber to WCC e-news. You are registered as ###USER_name### with the address ###USER_email###."
+#: ./browser/templates/weeklynews_view.pt:169
+msgid "endnote2"
+msgstr ""
+
+#. Default: "Click here to unsubscribe or change your distribution settings."
+#: ./browser/templates/weeklynews_view.pt:173
+msgid "endnote3"
+msgstr ""
+
+#: ./setuphandlers.py:6
+msgid "wcc.weeklynews import handler"
+msgstr ""
+
