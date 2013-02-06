@@ -5,47 +5,86 @@
       lang="en"
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="wcc.weeklynews">
+
+<metal:block fill-slot="javascript_head_slot">
+    <script language="Javascript" src="++resource++wcc.weeklynew/lyris.js"></script>
+</metal:block>
 <body>
 
-<tal:comment tal:condition="nothing">
-    This is a sample view template. It will not be used for rendering the
-    content unless activated by creation of a view class with a matching name.
-    
-    Note that we're using Plone 4 macros. Replace them with Plone 3 macros
-    if needed.
-</tal:comment>
+    <metal:main fill-slot="content-core">
+        <metal:content-core define-macro="content-core">
+            <table width="80%" border="0" cellpadding="2" cellspacing="8">
+                <form action="http://www.elabs5.com/functions/mailing_list.html" method="post" 
+                    name="lyrisform" onsubmit="return (!(UPTvalidateform(document.lyrisform)));">
+                    <input type="hidden" name="submitaction" value="3"/>
+                    <input type="hidden" name="mlid" value="39921" tal:attributes="value context/mlid|nothing"/>
+                    <input type="hidden" name="siteid" value="32425337" tal:attributes="value context/siteid|nothing"/>
+                    <input type="hidden" name="tagtype" value="q2"/>
+                    <input type="hidden" name="demographics" value="-1,51160,50889,24"/>
+                    <input type="hidden" name="redirection" value="http://www.oikoumene.org/?id=7560"
+                        tal:attributes="href string:${context/absolute_url}/subscribed"/>
+                    <input type="hidden" name="uredirection" value="http://www.oikoumene.org/?id=8736"
+                        tal:attributes="href string:${context/absolute_url}/unsubscribed"/>
+                    <input type="hidden" name="welcome" value=""/>
+                    <input type="hidden" name="double_optin" value="on"/>
+                    <input type="hidden" name="append" value="on"/>
+                    <input type="hidden" name="update" value="on"/>
+                    <input type="hidden" name="activity" value="submit"/>
+                    <tbody><tr valign="top">
+                            <td><b>Please enter your email address:</b></td>
+                            <td><input type="text" name="email" value="" size="20"></td>
+                            </tr>
+                            <tr valign="top">
+                                <td><p>Newsletter(s) you would like to receive<br>
+                                    </p></td>
+                                    <td><select name="val_51160[]" size="2" multiple="">
+                                            <!--
+                                        <option value="EWN Newsletter" selected="">EWN Newsletter (quarterly)</option>
+                                        <option value="Seven Weeks for Water - Notifications">Seven Weeks for Water (during Lent)</option>-->
+                                        <option tal:repeat="nltype view/newsletter_types"
+                                            tal:attributes="value nltype/value" tal:content="nltype/title">
+                                        </option>
+                                </select> </td>
+                            </tr>
+                            <tr valign="top">
+                                <td><p>Language(s) in which to receive the mailings</p>
+                                    <p class="style4">(You can select more than one by holding the Ctrl key down while you select)</p></td>
+                                <td>
+                                    <select name="val_50889[]" size="4" multiple="">
+                                        <option value="English" selected="">English</option>
+                                        <option value="French">French</option>
+                                        <option value="German">German</option>
+                                        <option value="Spanish">Spanish</option>
+                                </select> </td>
+                            </tr>
+                            <tr valign="top">
+                                <td>Formatted and illustrated version (html) or plain text?</td>
+                                <td><input name="val_24" type="radio" value="HTML" checked=""> 
+                                        html<br/>
+                                        <input type="radio" name="val_24" value="Plain Text"/> 
+                                        plain text<br/></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><input type="submit" value="Register now"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">&nbsp;</td>
+                                    </tr>
 
-<metal:main fill-slot="content-core">
-  <metal:content-core define-macro="content-core">
+                                </tbody>
+                            </form>
+                        </table>
 
-    <tal:block repeat="widget view/widgets/values">
-        <div class="field" tal:condition="python:widget.__name__ not in ('IDublinCore.title', 'IDublinCore.description', 'title', 'description',)">
-            <label tal:content="widget/label" />
-            <br />
-            <div tal:content="structure widget/render" />
-        </div>
-    </tal:block>
+                            <fieldset id="folder-listing">
+                                <legend>Previous editions</legend>
+                                <tal:block define="listing_macro context/folder_listing/macros/listing">
+                                    <metal:use_macro use-macro="listing_macro" />
+                                </tal:block>
+                            </fieldset>
 
-    <fieldset tal:repeat="group view/groups"
-              tal:attributes="id python:''.join((group.prefix, 'groups.', group.__name__)).replace('.', '-')">
-        <legend tal:content="group/label" />
-        <div class="field" tal:repeat="widget group/widgets/values">
-            <label tal:content="widget/label" />
-            <br />
-            <div tal:content="structure widget/render" />
-        </div>
-    </fieldset>
+                        </metal:content-core>
+                    </metal:main>
 
-    <fieldset id="folder-listing">
-        <legend>Contents</legend>
-        <tal:block define="listing_macro context/folder_listing/macros/listing">
-            <metal:use_macro use-macro="listing_macro" />
-        </tal:block>
-    </fieldset>
-
-  </metal:content-core>
-</metal:main>
-
-</body>
-</html>
+                </body>
+            </html>
 
