@@ -30,4 +30,22 @@ class ILyrisNewsletterFolder(form.Schema, IImageScaleTraversable):
 
     mlid = schema.TextLine(title=_(u'Lyris Mailing list ID'))
     siteid = schema.TextLine(title=_(u'Lyris Site ID'))
+    newsletter_types = schema.List(
+            title=_(u'Newsletter types'), required=False,
+            description=_(u'Available newsletter types. 1 each line using the '
+                'format <i>type_idenfitier|title</i>'),
+            value_type=schema.TextLine(), default=[])
+
+    form.widget(subscribed_message="plone.app.z3cform.wysiwyg.WysiwygFieldWidget")
+    subscribed_message = schema.Text(
+        title=_(u'Message to new subscribers'),
+        description=_(u'Text to display to new subscribers')
+    )
+
+    form.widget(unsubscribed_message="plone.app.z3cform.wysiwyg.WysiwygFieldWidget")
+    unsubscribed_message = schema.Text(
+        title=_(u'Message to unsubscribed user'),
+        description=_(u'Text to display to user who just unsubscribed')
+    )
+
 
