@@ -7,7 +7,7 @@
       i18n:domain="wcc.weeklynews">
 
 <metal:block fill-slot="javascript_head_slot">
-    <script language="Javascript" src="++resource++wcc.weeklynew/lyris.js"></script>
+    <script language="Javascript" src="++resource++wcc.weeklynews/lyris.js"></script>
 </metal:block>
 <body>
 

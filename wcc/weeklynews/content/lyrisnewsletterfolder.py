@@ -27,6 +27,7 @@ class ILyrisNewsletterFolder(form.Schema, IImageScaleTraversable):
     """
     Description of the Example Type
     """
-    pass
 
+    mlid = schema.TextLine(title=_(u'Lyris Mailing list ID'))
+    siteid = schema.TextLine(title=_(u'Lyris Site ID'))
 
