@@ -4,7 +4,7 @@ Changelog
 1.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- added lyrisnewsletterfolder [izhar]
 
 
 1.1 (2013-02-01)
