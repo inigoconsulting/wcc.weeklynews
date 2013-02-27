@@ -10,13 +10,6 @@ class Index(dexterity.DisplayForm):
     grok.template('lyrisnewsletterfolder_view')
     grok.name('view')
 
-    def newsletter_types(self):
-        result = []
-        for i in self.context.newsletter_types:
-            key, title = [k.strip() for k in i.split('|')]
-            result.append({'title': title, 'value': key})
-        return result
-
 class Subscribed(grok.View):
     grok.context(ILyrisNewsletterFolder)
     grok.require('zope2.View')

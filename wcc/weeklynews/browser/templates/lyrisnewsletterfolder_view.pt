@@ -48,8 +48,8 @@
                                             <!--
                                         <option value="EWN Newsletter" selected="">EWN Newsletter (quarterly)</option>
                                         <option value="Seven Weeks for Water - Notifications">Seven Weeks for Water (during Lent)</option>-->
-                                        <option tal:repeat="nltype view/newsletter_types"
-                                            tal:attributes="value nltype/value" tal:content="nltype/title">
+                                        <option tal:repeat="nltype context/newsletter_types"
+                                            tal:attributes="value nltype/identifier" tal:content="nltype/label">
                                         </option>
                                 </select> </td>
                             </tr>
