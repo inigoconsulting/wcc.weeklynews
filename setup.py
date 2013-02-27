@@ -30,6 +30,7 @@ setup(name='wcc.weeklynews',
           'plone.namedfile [blobs]',
           'collective.grok',
           'collective.miscbehaviors',
+          'collective.z3cform.datagridfield'
           # -*- Extra requirements: -*-
       ],
       extras_require={
