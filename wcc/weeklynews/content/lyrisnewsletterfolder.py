@@ -19,6 +19,7 @@ from z3c.relationfield.schema import RelationList, RelationChoice
 from plone.formwidget.contenttree import ObjPathSourceBinder
 from collective.z3cform.datagridfield import DictRow
 from wcc.weeklynews import MessageFactory as _
+from plone.multilingualbehavior import directives as pam
 
 
 # Interface class; used to define content-type schema.
@@ -32,10 +33,15 @@ class ILyrisNewsletterFolder(form.Schema, IImageScaleTraversable):
     Description of the Example Type
     """
 
+    pam.languageindependent('mlid')
     mlid = schema.TextLine(title=_(u'Lyris Mailing list ID'))
+    
+    pam.languageindependent('siteid')
     siteid = schema.TextLine(title=_(u'Lyris Site ID'))
 
     form.widget(newsletter_types='collective.z3cform.datagridfield.DataGridFieldFactory')
+
+    pam.languageindependent('newsletter_types')
     newsletter_types = schema.List(
             title=_(u'Newsletter types'), required=False,
             description=_(u'Available newsletter types'),
