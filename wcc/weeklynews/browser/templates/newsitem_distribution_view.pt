@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?xml version="1.0" encoding="utf-8"?><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" 
+    tal:define="newsletter view/newsletter;
+                res_url string:${context/absolute_url}/++resource++wcc.weeklynews;">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title tal:content="context/title"></title>
+</head>
+<body style="font:100% Verdana, Arial, Helvetica, sans-serif;line-height:1.2857em;"><div style="font:83%/1.2857em Verdana, Arial, Helvetica, sans-serif;background:#666666;margin:0;padding:0;text-align:center;color:#221b1b;background-color:#fff;line-height:1.2857em;">
+  <div style="width:647px;background:#FFFFFF;margin:0 auto;border:thin solid #ddd;text-align:left;">
+    <div><a tal:attributes="href context/absolute_url" 
+            title="World Council of Churches" target="_self" style="color:#b01;text-decoration:none;"><img 
+            tal:attributes="src string:${res_url}/distribution_banner.gif"
+            width="649" height="98" border="0" alt="World Council of Churches" title="World Council of Churches" style="border:none;"></a></div>
+    <div style="font-size:0.9em;line-height:32px;font-weight:bold;color:#AAAAAA;padding:0 20px 10px 20px;float:right;">media@wcc-coe.org</div>
+    <div style="font-size:0.9em;line-height:32px;font-weight:bold;color:#AAAAAA;padding:0 20px 10px 20px;">Contact: +41 79 507 6363</div>
+    <div style="padding: 25px 20px 0 20px;
+    border-top: #999966 solid 3px;">
+<!--TYPO3SEARCH_begin--><a name="c8851" style="color:#b01;text-decoration:none;"></a><div>
+<div style="list-style:none;">
+  <h1 style="color:#221b1b;font-size:1.65em;line-height:1.2em;"
+        tal:content="context/title">Title</h1>
+  <div style="display:block;
+    font-size: 0.8571em ; line-height:1.5em; color:#555;">
+  
+  <div tal:content="structure context/getText"> 
+  </div>
+</div>
+</div>
+<a name="c30006" style="color:#b01;text-decoration:none;"></a><div>
+<div style="font-size:0.8em;"></div>
+<a name="c29934" style="color:#b01;text-decoration:none;"></a><div><div>
+<p style="font-size:1em;"></p>
+<hr>
+<span style="font-size:0.8em;">The World Council of Churches promotes Christian unity in faith, witness and service for a just and peaceful world. An ecumenical fellowship of churches founded in 1948, today the WCC brings together 349 Protestant, Orthodox, Anglican and other churches representing more than 560 million Christians in over 110 countries, and works cooperatively with the Roman Catholic Church. The WCC general secretary is Rev. Dr Olav Fykse Tveit, from the [Lutheran] Church of Norway. Headquarters: Geneva, Switzerland.</span><br>
+</div></div>
+<a name="c30423" style="color:#b01;text-decoration:none;"></a><div><div>
+<p style="font-size:1em;"><span style="font-size:0.8em;">You receive this information as a subscriber of our media list. You are registered as ###USER_name### with the address ###USER_email###.</span>
+</p>
+<p style="font-size:1em;"><span style="font-size:0.8em;"
+        tal:condition="newsletter">Click <a 
+        tal:attributes="href newsletter/absolute_url"
+    target="_self" style="color:#b01;text-decoration:none;font-weight:bold;">here to unsubscribe or change your distribution settings</a>.</span></p>
+</div></div>
+<a name="c30007" style="color:#b01;text-decoration:none;"></a><div></div>
+</div>
+<a name="c8941" style="color:#b01;text-decoration:none;"></a><div></div>
+<!--TYPO3SEARCH_end-->
+</div>
+    <div style="padding:12px 20px;border-top:#999966 solid 3px;font-size:0.8em;margin-top:2em;"></div>
+    <!-- end #container -->
+  </div>
+</div></body>
+</html>
+
